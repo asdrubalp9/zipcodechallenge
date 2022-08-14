@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ZipsController extends Controller
@@ -18,17 +16,12 @@ class ZipsController extends Controller
                         WHERE 
                     d_codigo = ?
                     ', [$zipcode]);
-        // */
 
-
-
-
-
-        $data = [];
+        $data = [
+            'message' => 'No results found',
+        ];
         $statusCode = 500;
-
         if (count($entities) > 0) {
-            //dd($entities[0]);
             $statusCode = 200;
             $data = [
                 "zip_code" => $entities[0]->d_codigo,
@@ -54,8 +47,7 @@ class ZipsController extends Controller
                 ];
             }
         }
-        // */
-        //return json_encode($data);
+
         return response()->json($data, $statusCode);
     }
 }

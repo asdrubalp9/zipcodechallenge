@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\V1\ZipsController as V1ZipsController;
-use App\Http\Controllers\ZipsController;
+use App\Http\Controllers\Api\V1\ZipsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{zipcode}', [V1ZipsController::class, 'index']);
+Route::get('/api/zip-codes/{zipcode}', [ZipsController::class, 'index']);
