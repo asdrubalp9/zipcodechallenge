@@ -26,10 +26,11 @@ class ZipsController extends Controller
                         ', [$zipcode]);
 
             if (count($entities) > 0) {
+                // dd($entities[0]);
                 $statusCode = 200;
                 $data = [
                     "zip_code" => $entities[0]->d_codigo,
-                    "locality" => $entities[0]->d_estado,
+                    "locality" => strtoupper($this->stripAccents($entities[0]->d_ciudad)),
                     "federal_entity" => [
                         "key" => (int) $entities[0]->c_estado,
                         "name" => strtoupper($this->stripAccents($entities[0]->d_estado)),
