@@ -42,7 +42,7 @@ class ZipsController extends Controller
                 ];
                 foreach ($entities as $entitie) {
                     $data['settlements'][] = [
-                        "key" => $entitie->id_asenta_cpcons,
+                        "key" => (int)$entitie->id_asenta_cpcons,
                         "name" => strtoupper($this->stripAccents($entitie->d_asenta)),
                         "zone_type" => strtoupper($entitie->d_zona),
                         "settlement_type" => [
