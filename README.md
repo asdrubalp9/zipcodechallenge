@@ -12,4 +12,5 @@ Seguir los siguientes pasos
 
 # Procedimiento
 
-Convertí el archivo txt en CSV, despues coloque todo en una sola tabla y se ejecuta una query sin necedidad de usar el ORM para hacer la consulta de manera mas rápida.
+Convertí el archivo txt en CSV, después coloque todo en una sola tabla y se ejecuta una query sin necesidad de usar el ORM para hacer la consulta de manera mas rápida.
+además de estar hosteado en una instancia de EC2 de Amazon
