@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/api/zip-codes/{zipcode}', [ZipsController::class, 'index']);
+Route::get('/api/zip-codes/{zipcode?}', [ZipsController::class, 'index']);
