@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class ZipsController extends Controller
 {
-    public function index($zipcode)
+    public function index($zipcode, $statusCode = 500)
     {
 
         $entities =  DB::select('SELECT
@@ -20,7 +20,7 @@ class ZipsController extends Controller
         $data = [
             'message' => 'No results found',
         ];
-        $statusCode = 500;
+
         if (count($entities) > 0) {
             $statusCode = 200;
             $data = [
@@ -48,6 +48,6 @@ class ZipsController extends Controller
             }
         }
 
-        return response()->json($data, $statusCode);
+        return response()->json($data, $statusCode, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'], JSON_UNESCAPED_UNICODE);
     }
 }
