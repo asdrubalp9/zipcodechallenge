@@ -14,7 +14,7 @@ class CreateEntitiesTable extends Migration
     public function up()
     {
         Schema::create('entities', function (Blueprint $table) {
-            $table->string('d_codigo', 50);
+            $table->string('d_codigo', 50)->index();
             $table->string('d_asenta', 100);
             $table->string('d_tipo_asenta', 50);
             $table->string('D_mnpio', 50);
